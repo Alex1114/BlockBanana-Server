@@ -24,7 +24,7 @@ router.param('tokenId', function (req, res, next, tokenId) {
 router.get('/metadata/:tokenId', function (req, res) {
   //console.log(req.params.tokenId)
   adminClient.query(
-    q.Get(q.Ref(q.Collection('Metadata'), String(req.params.tokenId)))
+    q.Get(q.Ref(q.Collection('Metadata-Preview'), String(req.params.tokenId)))
   )
     .then((ret) => res.json(ret.data))
     .catch((err) => console.error('Error: %s', err))
